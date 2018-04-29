@@ -1,0 +1,30 @@
+{
+  "name": "@{{cookiecutter.github_name}}/{{cookiecutter.app_name}}",
+  "version": "1.0.0",
+  "private": true,
+  "description": "{{cookiecutter.project_short_description}}",
+  "main": "./distribution/index.js",
+  "scripts": {
+    "build": "babel source --presets babel-preset-env --out-dir distribution",
+    "prepare": "npm run build",
+    "test": "mocha ./tests",
+    "lint": "./node_modules/.bin/eslint ./source/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/{{cookiecutter.github_name}}/{{cookiecutter.app_name}}.git"
+  },
+  "author": "{{cookiecutter.author}}",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "async": "^2.6.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "mocha": "^3.5.3"
+  }
+}
